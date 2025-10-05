@@ -78,14 +78,24 @@ while True:
 ```
 ### TRACEROUTE COMMAND :
 ```
-target = ["www.google.com"] 
-result, unans = traceroute(target,maxttl=32) 
-print(result,unans)
+import subprocess
+
+def traceroute(host):
+    print(f"Tracing route to {host}\n")
+    result = subprocess.run(["tracert", host], text=True, capture_output=True)
+    print(result.stdout)
+
+traceroute("www.google.com")
+
 
 ```
 
 ## Output
-<img width="1576" height="428" alt="OutputScreenshot (1)" src="https://github.com/user-attachments/assets/7a04c1d8-7464-4b9c-9278-2978edeadc81" />
+<img width="1572" height="1090" alt="4 server and clin" src="https://github.com/user-attachments/assets/6a45cb4f-57cc-4a66-8b2b-bf9a4b63b8d4" />
+
+<img width="908" height="1067" alt="4tracerout" src="https://github.com/user-attachments/assets/24be8e33-e12f-4b21-a2c5-131fab151429" />
+
+
 
 ## Result
 Thus Execution of Network commands Performed 
